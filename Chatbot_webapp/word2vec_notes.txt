@@ -16,3 +16,14 @@ king=queen
 
 
 We need a way to represnt a word baesd on meaning not count.
+
+- We need a way to represent words based on meaning, not count
+
+- Core idea behind Word2Vec
+--- Words that appear in similar context have similar meaning 
+--- This is known as Distributional Hypothesis
+
+
+word2Vec Architecture
+-Two primary model Architecture
+ -CBOW -Continuous
