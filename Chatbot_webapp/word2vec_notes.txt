@@ -23,7 +23,44 @@ We need a way to represnt a word baesd on meaning not count.
 --- Words that appear in similar context have similar meaning 
 --- This is known as Distributional Hypothesis
 
+ Word2Vec Architecture
+- Two primary model architecture:
+    - CBOW
+    -Skip-Gram
 
-word2Vec Architecture
--Two primary model Architecture
- -CBOW -Continuous
+- CBOW
+    - Contiinuous bag of words 
+    - this model predicts a target word based on its surrounding context words. Generally fater for frequent words.
+    Example: Input: I am learning _____ intelligence.
+             Predict: artifical   
+
+- Skip-Gram
+    - using a single word to predict the surrounding context words. Generally faster for infrequent words.
+    Example: Input: intelligence
+             Predict: artifical, human, machine
+
+Why this creats meaning?
+If:b
+"happy" appears near joy, smile, fun
+"sad" appears near cry, depressed, pain
+Then:
+Vector positions become different 
+
+TF-IDF vs Word2Vec
+1.  TTF-IDF - Sparse 
+    Word2Vec - Dense
+2. TTF-IDF - Count based
+    Word2Vec - Context based
+3.  TTF-IDF - Independent words 
+    Word2Vec - Related word cluster
+
+Sparse matrix vs Dense Matrix
+1. Data Representation
+    Sparse - Contains mostly zero values 
+    Dense - Most values are meaningful, no-zero
+2. Storage Method:
+    Sparse - Only non-zero elements and their indices are stored, so significant memory 
+    Dense - Every element, including zero is stored explicitly as 2D array
+3. NLP Use case:
+    Sparse - Bag of words like TF-IDF 
+    Dense - word embedding like Word2Vec
