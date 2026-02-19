@@ -1,0 +1,18 @@
+It is a dense vector representation of a word that captures meanings.
+
+
+Word2Vec is a technique in NLP tused to represent words as dense numerical vector. 
+It allows the machine to understand the  semantic relationship between words by positioning similar words together.
+
+In TF-TDF:
+It treats words as independent tokens.
+No semantic meanings.
+
+TF-IDF does not know:
+car=automobile
+laptop=electronic
+happy=joyful
+king=queen
+
+
+We need a way to represnt a word baesd on meaning not count.
