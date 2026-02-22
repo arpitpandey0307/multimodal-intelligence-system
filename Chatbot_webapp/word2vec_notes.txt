@@ -64,3 +64,25 @@ Sparse matrix vs Dense Matrix
 3. NLP Use case:
     Sparse - Bag of words like TF-IDF 
     Dense - word embedding like Word2Vec
+
+    Glove
+    Glove Vectors for word representation
+    -developed by Stanford University
+    - unlike Word2Vec (predictive model), Glove is: count based + matrix factorization model
+
+    It combines:
+    1.Statistical word co-occurence
+    2.Matrix factorization
+    3.Linear Algebra
+
+    Word2Vec learns embeddings by predicting context. But it:
+    -only usess local context window
+    -doesn't directly uses Global corpus
+
+    In order to use full global co-occurence statistics of the corpus , we have Glove
+
+    Main idea behind Glove is:
+    word to word co-occurence matrix
+
+    Common pretrained Glove vectors:
+    
