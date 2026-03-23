@@ -191,5 +191,61 @@ Algorithm:
 
 new memory = old memory + new word
 
+Formula: h(t) = f(h(t-1), x(t))
+Formula : h(t) = activation(W * h(t-1) + U * x(t) + b)
+Memory Formula : h(t) = tanh(Wx Xt + Wh(sharing) h(t-1) + b(bias))
 
-"""
+Same weights (Wx, Wh) are shared across all time steps
+This is called weight sharing
+
+Summary of RNN:
+1. RNN is a type of neural network designed for (handle) sequential data.
+2. It maintains a hidden state (memory) that captures information from previous time steps.
+3. RNN processes input one word at a time, updating its hidden state based on the current input and the previous hidden state.
+4. The hidden state is updated using a non-linear activation function (like tanh) and shared weights across time steps.
+5. Works for text, speech, video, time series data, etc.
+
+Limitations of RNN:
+1.Cannont handle long-term dependencies due to vanishing gradient problem
+2. Training can be slow due to sequential processing
+
+Solutions to RNN Limitations:
+1. LSTM (Long Short-Term Memory)
+2. GRU (Gated Recurrent Unit)
+
+Types of RNN:
+1. One to One: Input and output are single elements (e.g. image classification)
+2. One to Many: Single input produces a sequence of outputs (e.g. image captioning)
+3. Many to One: Sequence of inputs produces a single output (e.g. sentiment analysis)
+4. Many to Many: Sequence of inputs produces a sequence of outputs (e.g. machine translation)
+
+Key architecture of RNN:
+- Standard RNN often struggle with the "vanishing gradient problem" where they forgot information from distant past.
+- That is why we need advanced variants of RNN that uses Gatinng mechanism:
+1. LSTM (Long Short-Term Memory)
+2. GRU (Gated Recurrent Unit)
+3. Bi-directional RNN
+4. Deep RNN
+
+BPTT - Backpropagation Through Time
+- To understand BPTT, think of RNN as a standard deep neural network unrolled across time steps. Each time step corresponds to a layer in the deep network. Because the same weights are shared across these layers, the gradients must account for entire history of sequence ....
+
+1. Forward Pass / Feedforward:
+- at every time step, network will perform  two main calculations:
+i. Hidden State: Updated using the current input and previous hidden state
+ Compute hidden state: h(t) = f(h(t-1), x(t))
+ii. Output: Generate output based on the current hidden state
+ Compute output: y(t) = g(h(t))
+
+ 2.Total Loss:
+  - the total loss for a sequence is the sum of losses at each time step:
+  Total Loss = L(y(1), target(1)) + L(y(2), target(2)) + ... + L(y(T), target(T))
+
+  3. Gradient Challenge:
+  - To ipdate weights, we need partial derivatives , using the chain rule we sum the contiribution of W at every step.
+  For a specific step t, the gradient depends on current state ht, which is in turn depends on ht-1, which depends on ht-2, and so on. This creates a long chain multiplication and dependencies that can lead to vanishing or exploding gradients.
+  
+  4. vainshing Gradient Problem:
+  - if the weights are smal. mutiplying them repeatedly causes the gradient to shrink exponentially, making it difficult for the network to learn long-term dependencies.
+  - if the weights are large, multiplying them repeatedly causes the gradient to grow exponentially, leading to unstable training.
+ """
