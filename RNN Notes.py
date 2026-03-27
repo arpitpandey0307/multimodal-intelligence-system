@@ -248,4 +248,21 @@ ii. Output: Generate output based on the current hidden state
   4. vainshing Gradient Problem:
   - if the weights are smal. mutiplying them repeatedly causes the gradient to shrink exponentially, making it difficult for the network to learn long-term dependencies.
   - if the weights are large, multiplying them repeatedly causes the gradient to grow exponentially, leading to unstable training.
+
+  =============================================================================================================
+  
+  LSTM- Long short term memory
+  Example: I was watching a movie yesterday with my friends and after a long discussion
+  we realized that movie was bad.
+
+  Important word: Bad
+  but it appears very late so RNN may forget it.
+
+  RNN Problems:
+  memory get weaker as sequence grow
+
+  What LSTM does"
+  - what to remember
+  - what to forget
+  -what to output
  """
