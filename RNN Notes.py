@@ -242,7 +242,7 @@ ii. Output: Generate output based on the current hidden state
   Total Loss = L(y(1), target(1)) + L(y(2), target(2)) + ... + L(y(T), target(T))
 
   3. Gradient Challenge:
-  - To ipdate weights, we need partial derivatives , using the chain rule we sum the contiribution of W at every step.
+  - To update weights, we need partial derivatives , using the chain rule we sum the contiribution of W at every step.
   For a specific step t, the gradient depends on current state ht, which is in turn depends on ht-1, which depends on ht-2, and so on. This creates a long chain multiplication and dependencies that can lead to vanishing or exploding gradients.
   
   4. vainshing Gradient Problem:
@@ -264,5 +264,44 @@ ii. Output: Generate output based on the current hidden state
   What LSTM does"
   - what to remember
   - what to forget
-  -what to output
+  - what to output
+
+  LSTM are design in such a way that avoids long-term dependencies.
+  Remembering information for long period of time is practically their default behaviour.
+
+  Three gates in LSTM:
+  1. Forget gate: decides what to remove from memory
+  2. Input gate: decides what new information to store
+  3. Output gate: decides what to use for prediction
+
+  Example: I went to the movie yesterday.
+  Word "yesterday" may not matter later -> forget
+
+  Example: The movie was amazing.
+  Store "amazing" -> important sentiment
+
+  Step by step LSTM algorithm
+
+  Step 1: Intialize memory
+    memory= empty
+
+  Step 2: Read first word
+  "I" -> Not important => weak memory
+
+  Step 3: "did"(next word)
+  Memory updated slightly
+
+  Step 4: "not" (next word)
+  Important word - input gate -> store "not"
+
+  Step 5: "like" (next word)
+  Now "like" ->positive
+  but: "not" ->negative
+  LSTM commbine : final meaning = negative
+
+  LSTM architecture breakdown
+  Step-1:
+  -decide what information we're going to throw away from cell state
+  -decision is being made by sigmoid layer know as "forget gate layer"
+  -it looks at ht-1
  """
