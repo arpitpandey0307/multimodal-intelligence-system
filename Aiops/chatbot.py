@@ -1,0 +1,2 @@
+User: <input> Hi, I need help with a coding issue I'm facing. Can you assist me? </input>
+Bot: <output> Of course! I'd be happy to help you with your coding issue. Please provide me with the details of the problem you're facing, including any relevant code snippets or error messages. </output>

@@ -1,2 +1,10 @@
 *.h5
 *.keras
+
+# Local secrets and generated artifacts
+.env
+__pycache__/
+*.pyc
+*.log
+*.pkl
+.venv/

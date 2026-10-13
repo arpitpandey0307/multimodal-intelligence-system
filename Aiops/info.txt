@@ -1,0 +1,13 @@
+Generative AI
+LLMs
+Evollution of Generative AI:
+1. Resrearch Phase
+2. Bedrock Phase (Basic models were created using the research papers)
+3. Providers: Big companies created their own LLMs.
+4. Applicaiton Developers: We are here!!
+
+2 types of Perspectives:
+
+A. User Perspectives: We are basically using the api keys and minding our own businesses.
+B. Builder's Perspectives:  To make LLMs
+
