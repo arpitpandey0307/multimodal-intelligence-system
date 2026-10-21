@@ -40,4 +40,17 @@ def test_valid_iris_prediction():
     assert result["class_name"] in ["setosa", "versicolor", "virginica"]
     #the predicted integrer must be between 0 and 2, corresponding to the three classes in the iris dataset
     assert result["prediction"] in [0, 1, 2]
-    
+
+    def test_invalid_iris_input():
+        #verify that invalid flower measurement produces an error
+        #Send a POST request to the /predict endpoint with invalid input data
+        #Test the /predict endpoint with invalid input data to ensure that the model is handling errors correctly.
+        payload = {
+            "sepal_length": 5.1,
+            "sepal_width": 3.5,
+            "petal_length": 1.4,
+            "petal_width": -0.2  # Invalid value (negative petal width)
+        }
+        response = client.post("/predict", json=payload)
+        #Assert that the response status code is 422 (Unprocessable Entity)
+        assert response.status_code == 422
