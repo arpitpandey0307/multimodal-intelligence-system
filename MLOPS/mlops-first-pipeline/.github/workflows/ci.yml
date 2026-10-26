@@ -11,7 +11,7 @@ on:
 
 #permission are restricted to read-only for security reasons
 permissions:
-  content: read
+  contents: read
 
 #Define jobs that make up the pipeline 
 jobs:
@@ -43,4 +43,4 @@ jobs:
       #Step 4: Build docker image for the iris ml api
       - name: Build Docker image
         run: |
-          docker build -t iris-ml-api:#{{github.sha}} .
+          docker build -t iris-ml-api:${{github.sha}} .
