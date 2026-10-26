@@ -96,4 +96,53 @@ Run test Locally:
     python -m pytest -v
 
 
-Create the Github actions workflow:
+Now Create a github action workflow
+
+   push the project to the Github
+   Commands:- 
+   git init
+   git add .
+   git commit -m "first commit"
+   git branch -M main
+   git remote add origin https://github.com/Xxierrr/mlops-first-pipeline.git
+   git push -u origin main
+
+   Progress so far :
+   Train model and create Fast API application - Done 
+   Conatinerize the application with Docker - Done 
+   Automated tests with Github CI - Done 
+   Experiment tracking and model registery with MLFlow - Next Step 
+   Container registery and cloud deployment
+   Production monitoring and drift detection
+   Automated traning and model prediction
+
+=========================================================
+PHASE 4: MLFlow - Experiment Tracking and Model Registery 
+=========================================================
+why do we need MLFlow?
+- Imagine you train a model multiple times, changing the parameters or data version
+- Without experiment tracking you might end up with files like model_v1.joblib, model_v2.joblib, model_final.joblib
+- MLFlow helps us maintain that record
+
+Training experiments
+-Model paramenters, dataset details and evalutation result
+
+MLFlow Tracking
+-Records parameters, metrics, run information and model artifacts
+
+MLFlow Model Registry
+-Organize model versions, metadata and lifecycle management
+
+Deployment pipeline
+-Select , validate and deploy approved model version
+
+4 major concepts:
+-Experiment -> collection of related training runs
+-Run -> one execution of training with specific parameters and results
+-Artifacts -> saved file produced by a run, such as trained model or evaluation report
+-Model Registry -> maanged catalog
+
+Install mflow
+-pip install mlflow
+
+mlflow server --backend-store-uri sqlite:///mlflow.db --host 127.0.0.1 --port 5000
