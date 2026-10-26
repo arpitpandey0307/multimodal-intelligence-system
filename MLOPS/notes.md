@@ -94,3 +94,6 @@ pip install httpx pytest
 
 Run test Locally:
     python -m pytest -v
+
+
+Create the Github actions workflow:
