@@ -145,4 +145,11 @@ Deployment pipeline
 Install mflow
 -pip install mlflow
 
-mlflow server --backend-store-uri sqlite:///mlflow.db --host 127.0.0.1 --port 5000
+Evaluate and promote model versions
+-We will add a validation gate that check model quality before allowing a model version to be considered for deployement 
+
+Promote a validated model using champion alias
+-OUr fastapi application loads a model from a local file
+-this works for demo purpose but becomes harder to manage when you have a multiple model versions
+
+-Instead of hardcoding a file path or version, we can assign the alias champion to the model version we want out application to use
