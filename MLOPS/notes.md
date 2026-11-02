@@ -153,3 +153,24 @@ Promote a validated model using champion alias
 -this works for demo purpose but becomes harder to manage when you have a multiple model versions
 
 -Instead of hardcoding a file path or version, we can assign the alias champion to the model version we want out application to use
+
+
+docker network connection
+docker container
+
+FastAPI -> Load iris-classification@champion
+Prediction API
+
+Make mlflow accessible to docker
+
+Restart mlflow with IP - 0.0.0.0
+mlflow server --backend-store-uri sqlite:///mlflow.db --host 0.0.0.0  --port 7001 --allowed-hosts "host.docker.internal,host.docker.internal:7001"
+
+Build docker image again
+docker build -t iris-ml-api:v2 .
+
+Start the container and test api
+docker run -d --name iris-ml-api-container -p 8000:8000 -e MLFLOW_TRACKING_URI=http://host.docker.internal:7001 iris-ml-api:v2
+
+9ed2eec014957fc053a5270eb3efb3b134ffe61c9b213354fea7241d9d481232
+
