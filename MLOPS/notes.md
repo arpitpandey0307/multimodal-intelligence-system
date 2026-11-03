@@ -174,3 +174,9 @@ docker run -d --name iris-ml-api-container -p 8000:8000 -e MLFLOW_TRACKING_URI=h
 
 9ed2eec014957fc053a5270eb3efb3b134ffe61c9b213354fea7241d9d481232
 
+
+mlflow server --host 0.0.0.0 --port 7001 --allowed-hosts "localhost,localhost:7001,127.0.0.1,127.0.0.1:7001,host.docker.internal,host.docker.internal:7001"
+
+http://127.0.0.1:8000/
+mlflow ui
+
