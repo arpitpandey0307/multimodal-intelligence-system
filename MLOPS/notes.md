@@ -180,3 +180,9 @@ mlflow server --host 0.0.0.0 --port 7001 --allowed-hosts "localhost,localhost:70
 http://127.0.0.1:8000/
 mlflow ui
 
+Automatically build and publish Docker images using GHCR
+GHCR - Github Container Registry
+
+Github event:
+Pull request to main - Test run + Image build
+Push to main - Image publish + Test run + Image build
